@@ -1,0 +1,12 @@
+[Unit]
+Requires=airflow-scheduler.service
+After=airflow-scheduler.service
+
+[Service]
+Type=simple
+User=airflow
+ExecStart=/bin/sh -c 'source /home/airflow/.bashrc; home/airflow/miniconda3/bin/airflow webserver'
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

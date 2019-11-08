@@ -1,0 +1,13 @@
+[Unit]
+Requires=airflow-postgres.service
+After=airflow-postgres.service
+
+[Service]
+Type=simple
+User=airflow
+ExecStart=/bin/sh -c '/home/airflow/miniconda3/bin/airflow scheduler'
+ExecStartPost=/bin/sleep 5
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
