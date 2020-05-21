@@ -1,0 +1,7 @@
+#Steps to clean kafka_out folder:
+
+mv kafkaout kafkaout_tr
+mkdir kafkaout
+chown -R nifi:trlvitals kafkaout
+chmod -R 777 kafkaout
+rm -rf kafkaout_tr
